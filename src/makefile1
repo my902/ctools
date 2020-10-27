@@ -1,0 +1,10 @@
+exe_a:main.c max.a sum.a
+	gcc -o exe_a main.c -I ../include -L ../lib -lmax -lsum
+max.a:max.o
+	ar rcs libmax.a max.o
+sum.a:sum.o
+	ar rcs libsum.a sum.o
+max.o:max.c
+	gcc -c max.c -o max.o
+sum.o:sum.c
+	gcc -c sum.c -o sum.o
